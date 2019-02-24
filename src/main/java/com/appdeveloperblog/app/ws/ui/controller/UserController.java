@@ -1,7 +1,7 @@
 package com.appdeveloperblog.app.ws.ui.controller;
 
-import com.appdeveloperblog.app.ws.ui.model.request.UserDetailsRequestModel;
-import com.appdeveloperblog.app.ws.ui.model.response.UserRest;
+import com.appdeveloperblog.app.ws.model.request.UserDetailsRequestModel;
+import com.appdeveloperblog.app.ws.shared.dto.UserDto;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public class UserController {
 	}
 
 	@PostMapping
-	public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails) {
+	public UserDto createUser(@RequestBody UserDetailsRequestModel userDetails) {
 		return null;
 	}
 
