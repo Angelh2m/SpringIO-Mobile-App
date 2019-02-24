@@ -28,7 +28,7 @@ public class UserController {
 	}
 
 	@PostMapping
-	public UserDto createUser(@RequestBody UserDetailsRequestModel userDetails) {
+	public UserRest createUser(@RequestBody UserDetailsRequestModel userDetails) {
 
 		UserRest returnValue = new UserRest();
 
@@ -36,9 +36,11 @@ public class UserController {
 
 		BeanUtils.copyProperties(userDetails, userDto);
 
-		UserDto createUser = userService.createUser(userDto);
+		UserDto createdUser = userService.createUser(userDto);
+		
+		BeanUtils.copyProperties(createdUser, returnValue);
 
-		return null;
+		return returnValue;
 	}
 
 	@PutMapping
